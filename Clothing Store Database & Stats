@@ -1,0 +1,49 @@
+--Create a clothing store database
+
+/**Clothing store:
+T-shirts (40, 15.99, 23)
+Jeans (25, 39.00, 14)
+Sweatshirts (40, 29.50, 33)
+Socks (20, 6.99, 12)
+Dresses (15, 35.50, 15)
+Shoes (10, 28.50, 7)
+Hats (12, 15.99, 6)
+Sweatpants (40, 35.50, 38)
+Long-sleeve shirts (25, 20.50, 19)
+Pants (20, 28.99, 11)
+Ties (30, 20.50, 22)
+Suits (10, 85.99, 2)
+Dress shirts (35, 30.50, 33)
+Jewelry (50, 15.99, 40)
+Shorts (45, 25.50, 37)
+**/
+
+CREATE TABLE Clothing_store (id INTEGER PRIMARY KEY, Item TEXT, Inventory INTEGER, Price INTEGER, Sold INTEGER);
+
+INSERT INTO Clothing_store VALUES (1, "T-shirts", 40, 15.99, 23);
+INSERT INTO Clothing_store VALUES (2, "Jeans", 25, 39.00, 14);
+INSERT INTO Clothing_store VALUES (3, "Sweatshirts", 40, 29.50, 33);
+INSERT INTO Clothing_store VALUES (4, "Socks", 20, 6.99, 12);
+INSERT INTO Clothing_store VALUES (5, "Dresses", 15, 35.50, 15); 
+INSERT INTO Clothing_store VALUES (6, "Shoes", 10, 28.50, 7);
+INSERT INTO Clothing_store VALUES (7, "Hats", 12, 15.99, 6);
+INSERT INTO Clothing_store VALUES (8, "Sweatpants", 40, 35.50, 38);
+INSERT INTO Clothing_store VALUES (9, "Long-sleeve shirts", 25, 20.50, 19);
+INSERT INTO Clothing_store VALUES (10, "Pants", 20, 28.99, 11);
+INSERT INTO Clothing_store VALUES (11, "Ties", 30, 20.50, 22);
+INSERT INTO Clothing_store VALUES (12, "Suits", 10, 85.99, 2);
+INSERT INTO Clothing_store VALUES (13, "Dress shirts", 35, 30.50, 33);
+INSERT INTO Clothing_store VALUES (14, "Jewelry", 50, 15.99, 40);
+INSERT INTO Clothing_store VALUES (15, "Shorts", 45, 25.50, 37);
+
+--display the database ordered by price.
+SELECT * FROM Clothing_store
+ORDER BY price asc;
+
+--the total quantity of items in inventory.
+SELECT SUM (Inventory) FROM Clothing_store;
+
+--what are the most popular items?
+SELECT item, price, sold FROM Clothing_store
+order by sold desc
+limit 5;
